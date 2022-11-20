@@ -20,18 +20,31 @@
                 <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                     <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#"
-                               class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
-                               aria-current="page">Home</a>
+                            <router-link :to="{name: 'Home'}"
+                                         class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                                         aria-current="page">Home
+                            </router-link>
                         </li>
-                        <li>
-                            <a href="#"
-                               class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign Up</a>
-                        </li>
+                        <template v-if="!authenticated">
+                            <li>
+                                <router-link :to="{name: 'login'}"
+                                             class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                    Login
+                                </router-link>
+                            </li>
+                            <li>
+                                <a href="/register"
+                                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign
+                                    Up</a>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li>
+                                <a href="#"
+                                   @click="onLogout"
+                                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</a>
+                            </li>
+                        </template>
                     </ul>
                 </div>
             </div>
@@ -40,8 +53,22 @@
 </template>
 
 <script>
+import {computed} from "vue";
+import {useStore} from 'vuex'
+
 export default {
-    name: "Navbar"
+    name: "Navbar",
+    setup() {
+        const store = useStore()
+        // Dispatch an action from vuex
+        const onLogout = () => store.dispatch('logout')
+        // Get a data from the state getters
+        const authenticated = computed(() => store.getters.authenticated)
+        return {
+            onLogout,
+            authenticated
+        }
+    }
 }
 </script>
 

@@ -1,17 +1,22 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import App from '../components/App'
+import Home from '../pages/Home'
+import Login from '../pages/Login'
 
 const routes = [
     {
-        path: '/',
-        name: 'app',
-        component: App
+        path: "/",
+        name: "Home",
+        component: Home,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login
     }
 ];
 
 const router = createRouter({
-    // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
     history: createWebHistory(),
     routes, // short for `routes: routes`
 });

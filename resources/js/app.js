@@ -2,10 +2,22 @@ require('./bootstrap');
 
 import {createApp} from 'vue'
 import router from './router'
+import store from "./store";
 
-import App from './components/App'
+import AppRoot from "./AppRoot";
 
-const app = createApp({});
-app.component('app', App);
-app.use(router);
-app.mount('#app');
+// Subscriber runs for every vuex mutation
+require("./store/subscriber");
+
+store.dispatch("attempt", localStorage.getItem("token")).then(() => {
+    // After loading the ME api
+    // Then render the vue
+
+    const app = createApp(AppRoot);
+    app.use(store);  // VUEX
+    app.use(router); // VUE-ROUTER
+    app.mount('#app');
+
+});
+
+
