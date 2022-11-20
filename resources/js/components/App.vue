@@ -1,10 +1,14 @@
 <template>
-    <h1>Vue Component</h1>
+    <Navbar />
 </template>
 
 <script>
+import Navbar from "./layouts/Navbar";
 export default {
-    name: "App"
+    name: "App",
+    components: {
+        Navbar
+    }
 }
 </script>
 
