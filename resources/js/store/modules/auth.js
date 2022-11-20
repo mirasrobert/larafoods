@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 // State
 const state = {
     token: null,
@@ -28,7 +30,7 @@ const getters = {
 
 // Actions are when you are creating API calls and committing Mutations
 const actions = {
-    async login({ commit, dispatch }, data) {
+    async login({commit, dispatch}, data) {
         try {
             const response = await axios.post("/api/login", data.formData); // Login that returns a token
             dispatch("attempt", response.data.token);
@@ -36,13 +38,25 @@ const actions = {
             data.router.push("/"); // Redirect When Success Login
         } catch (e) {
             commit("SET_LOGIN_ERROR", e.response.data); // Set Error
-            if (e.response.status === 403) {
+            if (e.response.status === 401) {
                 console.error("Forbidden: Invalid Credentials");
+                Swal.fire({
+                    background: '#F7471C',
+                    toast: true,
+                    icon: "error",
+                    iconColor: '#ffffff',
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    title: "<span style='color:white'>Invalid Email or Password</span>",
+                });
+
             }
         }
     },
 
-    async register({ commit, dispatch }, data) {
+    async register({commit, dispatch}, data) {
         try {
             const response = await axios.post(
                 "/api/register",
@@ -56,7 +70,7 @@ const actions = {
         }
     },
 
-    async attempt({ commit, state }, token) {
+    async attempt({commit, state}, token) {
         if (token) {
             commit("SET_TOKEN", token);
         }
@@ -82,7 +96,7 @@ const actions = {
         }
     },
 
-    logout({ commit }) {
+    logout({commit}) {
         return axios.post("/api/logout").then(() => {
             commit("SET_TOKEN", null);
             commit("SET_USER", null);
