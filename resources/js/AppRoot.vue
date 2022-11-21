@@ -4,16 +4,21 @@
         <Navbar/>
     </div>
     <router-view/>
+
+    <Footer/>
+
 </template>
 
 <script>
 import {computed} from "vue";
 import {useRoute} from "vue-router";
 import Navbar from "./components/layouts/Navbar";
+import Footer from "./components/layouts/Footer";
 
 export default {
     name: "AppRoot",
     components: {
+        Footer,
         Navbar
     },
     setup() {
