@@ -1,6 +1,6 @@
 <template>
     <div class="container py-32">
-        <h1 class="text-3xl font-bold text-center mb-16 pt-8">Shopping Cart</h1>
+        <h1 class="text-3xl font-bold text-center mb-16">Shopping Cart</h1>
         <div class="overflow-x-auto relative">
             <table
                 class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
@@ -35,19 +35,7 @@
                                         <span class="font-normal text-gray-600"
                                             >Size:</span
                                         >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
+                                        Large
                                     </li>
                                 </ul>
                             </div>
@@ -77,19 +65,7 @@
                                         <span class="font-normal text-gray-600"
                                             >Size:</span
                                         >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
+                                        Medium
                                     </li>
                                 </ul>
                             </div>
@@ -119,19 +95,7 @@
                                         <span class="font-normal text-gray-600"
                                             >Size:</span
                                         >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
-                                    </li>
-                                    <li>
-                                        <span class="font-normal text-gray-600"
-                                            >Size:</span
-                                        >
-                                        L
+                                        Small
                                     </li>
                                 </ul>
                             </div>
