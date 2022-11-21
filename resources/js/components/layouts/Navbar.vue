@@ -7,17 +7,17 @@
                 <div
                     class="container flex flex-wrap items-center justify-between mx-auto"
                 >
-                    <a href="#" class="flex items-center">
+                    <router-link to="/" class="flex items-center">
                         <img
                             src="http://127.0.0.1:8000/logo.png"
                             class="h-6 mr-3 sm:h-10"
                             alt="LaraFoods Logo"
                         />
                         <span
-                            class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+                            class="text-gray-900 self-center text-xl font-semibold whitespace-nowrap dark:text-white"
                             >LARAFOODS</span
                         >
-                    </a>
+                    </router-link>
                     <button
                         data-collapse-toggle="navbar-dropdown"
                         type="button"
