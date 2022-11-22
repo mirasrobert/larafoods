@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Cart from "../pages/Cart";
 import Product from "../pages/Product";
+import AddProduct from "../pages/products/AddProduct";
 
 const routes = [
     {
@@ -26,6 +27,11 @@ const routes = [
         path: "/cart",
         name: "cart",
         component: Cart,
+    },
+    {
+        path: "/product/add",
+        name: "add_product",
+        component: AddProduct,
     },
     {
         path: "/product/:id",

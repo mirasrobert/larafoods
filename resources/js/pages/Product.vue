@@ -1,5 +1,9 @@
 <template>
-    <div class="container">
+    <div class="container" v-if="isLoading">
+        Loading...
+    </div>
+    <div class="container" v-else>
+        <!--   Product  Details  -->
         <div
             class="grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-6 my-24"
         >
@@ -18,14 +22,15 @@
                 <form action="#">
                     <!-- Title -->
                     <div class="flex justify-between mb-6">
-                        <p class="text-xl font-semibold">Hot Chili Pizza</p>
-                        <p class="text-xl font-semibold">$59.99</p>
+                        <p class="text-xl font-semibold">{{ product && product.name }}</p>
+                        <p class="text-xl font-semibold">${{ productPrice }}
+                        </p>
                     </div>
                     <!-- Ratings -->
                     <div class="flex mt-2.5 mb-5">
                         <span
                             class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 mr-3"
-                            >5.0</span
+                        >5.0</span
                         >
                         <svg
                             aria-hidden="true"
@@ -92,17 +97,17 @@
                     <div class="mb-6">
                         <p class="text-base font-medium mb-2">Size</p>
                         <ul
-                            class="grid gap-6 w-full grid-cols-2 md:grid-cols-3"
-                        >
+                            class="grid gap-6 w-full grid-cols-2 md:grid-cols-3">
                             <li>
                                 <input
                                     type="radio"
                                     id="pizza-small"
-                                    name="hosting"
-                                    value="small"
+                                    name="size"
+                                    value="regular"
                                     class="hidden peer"
+                                    @change="onChange"
                                     required
-                                />
+                                >
                                 <label
                                     for="pizza-small"
                                     class="inline-flex justify-between items-center p-4 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 shadow-md"
@@ -121,9 +126,10 @@
                                 <input
                                     type="radio"
                                     id="pizza-medium"
-                                    name="hosting"
+                                    name="size"
                                     value="medium"
                                     class="hidden peer"
+                                    @change="onChange"
                                     required
                                 />
                                 <label
@@ -145,8 +151,9 @@
                                 <input
                                     type="radio"
                                     id="pizza-large"
-                                    name="hosting"
+                                    name="size"
                                     value="large"
+                                    @change="onChange"
                                     class="hidden peer"
                                 />
                                 <label
@@ -166,7 +173,7 @@
                         </ul>
                     </div>
                     <div class="mb-6">
-                        <Label labelFor="quantity" text="Quantity" />
+                        <Label labelFor="quantity" text="Quantity"/>
                         <Input
                             type="number"
                             id="quantity"
@@ -174,7 +181,7 @@
                         />
                     </div>
                     <div class="mb-6">
-                        <SubmitButton width="full" text="Add to cart" />
+                        <SubmitButton width="full" text="Add to cart"/>
                     </div>
                 </form>
                 <!-- Description -->
@@ -195,7 +202,7 @@
                 </div>
             </div>
         </div>
-
+        <!--   Reviews     -->
         <div
             class="grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-6 my-24"
         >
@@ -299,12 +306,60 @@
 </template>
 
 <script>
+import {ref, watch} from 'vue'
+import {useRoute} from 'vue-router'
 import Input from "../components/forms/Input.vue";
 import Label from "../components/forms/Label.vue";
 import SubmitButton from "../components/forms/SubmitButton.vue";
+import useProducts from "../composables/products";
+
 export default {
     name: "Product",
-    components: { SubmitButton, Input, Label },
+    components: {SubmitButton, Input, Label},
+    setup() {
+        const {product, getSingleProduct, isLoading} = useProducts();
+        const route = useRoute();
+        let productPrice = ref(0);
+        const prdAttribute = ref('');
+
+        // fetch the user information when params change
+        watch(
+            () => route.params.id,
+            (newId) => {
+                if (newId) {
+                    getSingleProduct(newId);
+                }
+            },
+            {
+                deep: true,
+                immediate: true,
+            }
+        );
+
+        // On Change of Radio Button
+        const onChange = (e) => {
+            if (product.value) {
+                const attr = product.value;
+                const product_attributes = attr.product_attribute;
+                prdAttribute.value = product_attributes.find(attr => attr.size.toLowerCase() === e.target.value.toLowerCase());
+                if (prdAttribute.value && prdAttribute.value.price) {
+                    productPrice.value = prdAttribute.value.price;
+                } else {
+                    productPrice.value = 0.00;
+                }
+                console.log(productPrice.value)
+            }
+        }
+
+        return {
+            product,
+            onChange,
+            isLoading,
+            prdAttribute,
+            productPrice
+        }
+
+    }
 };
 </script>
 

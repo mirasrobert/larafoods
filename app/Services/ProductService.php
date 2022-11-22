@@ -19,6 +19,9 @@ class ProductService
     {
         $fields = $request->validate([
             'name' => ['required', 'string'],
+            'regular_price' => ['required', 'string'],
+            'small_price' => ['required', 'string'],
+            'large_price' => ['required', 'string'],
         ]);
 
         $slug = Str::slug($request->name);
@@ -41,9 +44,24 @@ class ProductService
             'imageable_type' => 'App\Models\Product'
         ]);
 
+        // Regular
+        $product->product_attribute()->create([
+            'size' => 'regular',
+            'price' => $request->regular_price,
+            'stocks' => 30
+        ]);
+
+        // Small
         $product->product_attribute()->create([
             'size' => 'small',
-            'price' => 150.99,
+            'price' => $request->small_price,
+            'stocks' => 30
+        ]);
+
+        // Large
+        $product->product_attribute()->create([
+            'size' => 'large',
+            'price' => $request->large_price,
             'stocks' => 30
         ]);
 

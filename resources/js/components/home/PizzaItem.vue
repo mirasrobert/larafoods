@@ -1,14 +1,18 @@
 <template>
     <div class="w-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 mb-5">
-        <a href="#" class="pizza-img-wrapper">
-            <img class="p-8 w-full rounded-t-lg object-cover"
-                 src="https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&w=0&k=20&c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8="
-                 alt="product image"/>
-        </a>
-        <div class="px-5 pb-5">
-            <a href="#">
-                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">Hot Chili Pizza</h5>
-            </a>
+        <div class="pizza-img-wrapper">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+                <img class="p-8 object-cover"
+                     :src="product.image.url"
+                     alt="product image"/>
+            </router-link>
+        </div>
+        <div class="px-5 py-5">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">
+                    {{ product.name }}
+                </h5>
+            </router-link>
             <div class="flex items-center mt-2.5 mb-5 justify-center">
                 <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg"><title>First star</title>
@@ -38,21 +42,21 @@
                 <span
                     class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
             </div>
-            <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                <a href="#"
-                   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Order now</a>
-            </div>
+
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "PizzaItem"
+    name: "PizzaItem",
+    props: ['product']
 }
 </script>
 
 <style scoped>
-
+.pizza-img-wrapper {
+    width: 100%;
+    height: 270px;
+}
 </style>

@@ -26,16 +26,19 @@
             <h1 class="text-4xl font-bold text-center uppercase mb-6">The best pizza in town</h1>
             <p class="text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, enim exercitationem impedit itaque magnam nam, nemo numquam optio pariatur quam quis, repellendus totam. Dolorem ea fugiat nostrum repellendus rerum, tenetur.</p>
         </div>
-        <pizza-list />
+        <pizza-list :products="products" />
     </div>
 
 </template>
 
 <script>
-import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
 import {Carousel, Slide, Navigation} from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import PizzaList from "../components/home/PizzaList";
+import useProducts from "../composables/products";
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+
 
 export default {
     name: "Home",
@@ -44,8 +47,13 @@ export default {
         Carousel,
         Slide,
         Navigation,
+        PulseLoader
     },
     setup() {
+        const { products, getProducts } = useProducts()
+
+        onMounted(getProducts);
+
         const wrapAround = true
         const breakpoints = {
             // 700px and up
@@ -70,7 +78,8 @@ export default {
         return {
             wrapAround,
             breakpoints,
-            images
+            images,
+            products
         }
     }
 }
