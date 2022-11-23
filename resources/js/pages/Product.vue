@@ -1,8 +1,8 @@
 <template>
-    <div class="container" v-if="isLoading">
-        Loading...
+    <div v-if="isLoading" class="flex items-center justify-center min-h-screen w-full">
+        <pulse-loader color="#1A56DB" size="40px"></pulse-loader>
     </div>
-    <div class="container" v-else>
+    <div v-else class="container">
         <!--   Product  Details  -->
         <div
             class="grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-6 my-24"
@@ -12,8 +12,8 @@
                     class="block w-full h-full p-6 bg-white border border-gray-200 rounded-lg shadow-md"
                 >
                     <img
-                        class="w-full h-full object-cover"
-                        src="https://media.istockphoto.com/id/1067288680/photo/assorted-pizza-on-a-white-background-view-from-above.jpg?s=612x612&w=0&k=20&c=KY3Lsw__x2lYjkUhQQUe5ZtYcPUHNcnZXkt6plz4WtU="
+                        class="w-full h-full object-contain"
+                        :src="product && product.image.url"
                         alt="product-image"
                     />
                 </div>
@@ -23,8 +23,14 @@
                     <!-- Title -->
                     <div class="flex justify-between mb-6">
                         <p class="text-xl font-semibold">{{ product && product.name }}</p>
-                        <p class="text-xl font-semibold">${{ productPrice }}
-                        </p>
+                        <div>
+                            <p class="text-xl font-semibold">
+
+                                {{
+                                    `$${product && product.product_attribute.find(attr => attr.size.toLowerCase() === selectedSize).price}`
+                                }}
+                            </p>
+                        </div>
                     </div>
                     <!-- Ratings -->
                     <div class="flex mt-2.5 mb-5">
@@ -98,15 +104,16 @@
                         <p class="text-base font-medium mb-2">Size</p>
                         <ul
                             class="grid gap-6 w-full grid-cols-2 md:grid-cols-3">
-                            <li>
+                            <li v-if="product.product_attribute.find(attr => attr.size.toLowerCase() === 'small')">
                                 <input
                                     type="radio"
                                     id="pizza-small"
                                     name="size"
-                                    value="regular"
+                                    value="small"
                                     class="hidden peer"
-                                    @change="onChange"
                                     required
+                                    :checked="selectedSize === selectedSize"
+                                    v-model="selectedSize"
                                 >
                                 <label
                                     for="pizza-small"
@@ -116,21 +123,22 @@
                                         <div
                                             class="w-full text-lg font-semibold"
                                         >
-                                            S
+                                            Small
                                         </div>
                                         <div class="w-full">2-3 people</div>
                                     </div>
                                 </label>
                             </li>
-                            <li>
+                            <li v-if="product.product_attribute.find(attr => attr.size.toLowerCase() === 'regular')">
                                 <input
                                     type="radio"
                                     id="pizza-medium"
                                     name="size"
-                                    value="medium"
+                                    value="regular"
                                     class="hidden peer"
-                                    @change="onChange"
                                     required
+                                    :checked="selectedSize === 'regular'"
+                                    v-model="selectedSize"
                                 />
                                 <label
                                     for="pizza-medium"
@@ -140,21 +148,21 @@
                                         <div
                                             class="w-full text-lg font-semibold"
                                         >
-                                            M
+                                            Regular
                                         </div>
                                         <div class="w-full">4-6 people</div>
                                     </div>
                                 </label>
                             </li>
-
-                            <li>
+                            <li v-if="product.product_attribute.find(attr => attr.size.toLowerCase() === 'large')">
                                 <input
                                     type="radio"
                                     id="pizza-large"
                                     name="size"
                                     value="large"
-                                    @change="onChange"
                                     class="hidden peer"
+                                    :checked="selectedSize === 'large'"
+                                    v-model="selectedSize"
                                 />
                                 <label
                                     for="pizza-large"
@@ -164,7 +172,7 @@
                                         <div
                                             class="w-full text-lg font-semibold"
                                         >
-                                            L
+                                            Large
                                         </div>
                                         <div class="w-full">5-8 people</div>
                                     </div>
@@ -212,7 +220,7 @@
                 <h5
                     class="mb-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                 >
-                    What do others think about this product?
+                    What do others think about this product
                 </h5>
                 <div class="flex space-x-3.5">
                     <div>
@@ -312,15 +320,17 @@ import Input from "../components/forms/Input.vue";
 import Label from "../components/forms/Label.vue";
 import SubmitButton from "../components/forms/SubmitButton.vue";
 import useProducts from "../composables/products";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+
 
 export default {
     name: "Product",
-    components: {SubmitButton, Input, Label},
+    components: {SubmitButton, Input, Label, PulseLoader},
     setup() {
-        const {product, getSingleProduct, isLoading} = useProducts();
+        const {product, getSingleProduct, isLoading, status} = useProducts();
         const route = useRoute();
-        let productPrice = ref(0);
         const prdAttribute = ref('');
+        const selectedSize = ref('regular');
 
         // fetch the user information when params change
         watch(
@@ -336,27 +346,11 @@ export default {
             }
         );
 
-        // On Change of Radio Button
-        const onChange = (e) => {
-            if (product.value) {
-                const attr = product.value;
-                const product_attributes = attr.product_attribute;
-                prdAttribute.value = product_attributes.find(attr => attr.size.toLowerCase() === e.target.value.toLowerCase());
-                if (prdAttribute.value && prdAttribute.value.price) {
-                    productPrice.value = prdAttribute.value.price;
-                } else {
-                    productPrice.value = 0.00;
-                }
-                console.log(productPrice.value)
-            }
-        }
-
         return {
             product,
-            onChange,
             isLoading,
             prdAttribute,
-            productPrice
+            selectedSize
         }
 
     }

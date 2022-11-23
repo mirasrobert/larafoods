@@ -30,7 +30,9 @@ class ProductService
 
         if ($request->hasFile('image')) {
             // Upload an image file to cloudinary with one line of code
-            $uploadedFileUrl = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            // $uploadedFileUrl = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            $uploadedFileUrl = $request->file('image')->store('pizza', 'public');
+            $uploadedFileUrl = '/storage/' . $uploadedFileUrl;
         }
 
         $product = Product::create([

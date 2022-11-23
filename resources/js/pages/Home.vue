@@ -24,9 +24,16 @@
     <div class="container">
         <div class="my-16">
             <h1 class="text-4xl font-bold text-center uppercase mb-6">The best pizza in town</h1>
-            <p class="text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, enim exercitationem impedit itaque magnam nam, nemo numquam optio pariatur quam quis, repellendus totam. Dolorem ea fugiat nostrum repellendus rerum, tenetur.</p>
+            <p class="text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, enim
+                exercitationem impedit itaque magnam nam, nemo numquam optio pariatur quam quis, repellendus totam.
+                Dolorem ea fugiat nostrum repellendus rerum, tenetur.</p>
         </div>
-        <pizza-list :products="products" />
+        <div v-if="isLoading" class="flex items-center justify-center min-h-screen w-full">
+            <pulse-loader color="#1A56DB" size="40px"></pulse-loader>
+        </div>
+        <div v-else>
+            <pizza-list :products="products"/>
+        </div>
     </div>
 
 </template>
@@ -50,7 +57,7 @@ export default {
         PulseLoader
     },
     setup() {
-        const { products, getProducts } = useProducts()
+        const {products, getProducts, isLoading} = useProducts()
 
         onMounted(getProducts);
 
@@ -79,7 +86,8 @@ export default {
             wrapAround,
             breakpoints,
             images,
-            products
+            products,
+            isLoading
         }
     }
 }

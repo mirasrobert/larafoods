@@ -2,7 +2,6 @@
     <slot></slot>
 </template>
 
-<
 <script>
 import {mapGetters} from "vuex";
 import router from "../../router";
