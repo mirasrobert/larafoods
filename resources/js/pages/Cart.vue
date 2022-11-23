@@ -3,7 +3,7 @@
         <h1 class="text-3xl font-bold text-center mb-16">Shopping Cart</h1>
         <div
             class="grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-8">
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto overflow-y-hidden">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead
                         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
@@ -16,10 +16,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-10 md:px-0">
-                        <td
-                            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex pr-36">
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-10 md:px-0">
+                        <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex pr-36">
                             <img
                                 class="w-24 h-24 rounded-t-lg object-cover"
                                 src="https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&w=0&k=20&c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8="
@@ -37,74 +35,6 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="py-4 px-6">
-                            <select id="small" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </td>
-                        <td class="py-4 px-6 text-pink-600 font-medium">
-                            <span>Remove</span>
-                        </td>
-                        <td class="py-4 px-6 font-bold">$2999</td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th
-                            scope="row"
-                            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex"
-                        >
-                            <img
-                                class="w-24 h-24 rounded-t-lg object-cover"
-                                src="https://media.istockphoto.com/id/1336655655/photo/pizza-with-bacon-mushrooms-salami-and-vegetables-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=iZaMhg4O0fl8bG7qMPoIv9RGImfDDAdi1jauyq1F2K4="
-                                alt="product image"
-                            />
-                            <div class="pl-5">
-                                <p class="font-bold">Pepperoni Pizza</p>
-                                <ul class="mt-2">
-                                    <li>
-                                        <span class="font-normal text-gray-600">Size: Regular</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </th>
-                        <td class="py-4 px-6">
-                            <select id="small" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </td>
-                        <td class="py-4 px-6 text-pink-600 font-medium">
-                            <span>Remove</span>
-                        </td>
-                        <td class="py-4 px-6 font-bold">$2999</td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th
-                            scope="row"
-                            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex"
-                        >
-                            <img
-                                class="w-24 h-24 rounded-t-lg object-cover"
-                                src="https://media.istockphoto.com/id/1283482970/photo/top-view-of-round-pizza-isolated-on-white.jpg?s=612x612&w=0&k=20&c=7GPLy0DQ6QI89b26E4iQMY1ou9510Q7t5GMci-EmJ3E="
-                                alt="product image"
-                            />
-                            <div class="pl-5">
-                                <p class="font-bold">Pepperoni Pizza</p>
-                                <ul class="mt-2">
-                                    <li>
-                                        <span class="font-normal text-gray-600">Size: Small</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </th>
                         <td class="py-4 px-6">
                             <select id="small" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="1" selected>1</option>
