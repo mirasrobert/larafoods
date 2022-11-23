@@ -35,8 +35,7 @@ const actions = {
             const response = await axios.post("/api/login", data.formData); // Login that returns a token
             dispatch("attempt", response.data.token);
             commit("SET_LOGIN_ERROR", null); // Clear Errors
-            //data.router.push("/"); // Redirect When Success Login
-            window.location.href = '/'
+            data.router.push("/"); // Redirect When Success Login
         } catch (e) {
             commit("SET_LOGIN_ERROR", e.response.data); // Set Error
             if (e.response.status === 401) {

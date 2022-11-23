@@ -22133,8 +22133,7 @@ var actions = {
               // Login that returns a token
               dispatch("attempt", response.data.token);
               commit("SET_LOGIN_ERROR", null); // Clear Errors
-              //data.router.push("/"); // Redirect When Success Login
-              window.location.href = '/';
+              data.router.push("/"); // Redirect When Success Login
               _context.next = 14;
               break;
             case 10:
