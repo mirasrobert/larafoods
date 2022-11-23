@@ -20043,6 +20043,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_forms_Label_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/forms/Label.vue */ "./resources/js/components/forms/Label.vue");
+/* harmony import */ var _components_forms_Input_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/forms/Input.vue */ "./resources/js/components/forms/Input.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Checkout",
+  components: {
+    Input: _components_forms_Input_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Label: _components_forms_Label_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Home.vue?vue&type=script&lang=js":
 /*!*****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Home.vue?vue&type=script&lang=js ***!
@@ -20893,9 +20918,94 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container py-32"
+  "class": "container pb-10 pt-3"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-3xl font-bold text-center mb-16\">Shopping Cart</h1><div class=\"overflow-x-auto relative\"><table class=\"w-full text-sm text-left text-gray-500 dark:text-gray-400\"><thead class=\"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\"><tr><th scope=\"col\" class=\"py-3 px-6\">Product</th><th scope=\"col\" class=\"py-3 px-6\">Quantity</th><th scope=\"col\" class=\"py-3 px-6\">Action</th><th scope=\"col\" class=\"py-3 px-6\">Total</th></tr></thead><tbody><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Hot Chili Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size:</span> Large </li></ul></div></th><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1336655655/photo/pizza-with-bacon-mushrooms-salami-and-vegetables-isolated-on-white-background.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=iZaMhg4O0fl8bG7qMPoIv9RGImfDDAdi1jauyq1F2K4=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size:</span> Medium </li></ul></div></th><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1283482970/photo/top-view-of-round-pizza-isolated-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=7GPLy0DQ6QI89b26E4iQMY1ou9510Q7t5GMci-EmJ3E=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size:</span> Small </li></ul></div></th><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr></tbody></table></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "text-3xl font-bold text-center mb-16"
+}, "Shopping Cart", -1 /* HOISTED */);
+var _hoisted_3 = {
+  "class": "grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-8"
+};
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"overflow-x-auto relative\"><table class=\"w-full text-sm text-left text-gray-500 dark:text-gray-400\"><thead class=\"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\"><tr><th scope=\"col\" class=\"py-3 px-6\">Product</th><th scope=\"col\" class=\"py-3 px-6\">Quantity</th><th scope=\"col\" class=\"py-3 px-6\">Action</th><th scope=\"col\" class=\"py-3 px-6\">Total</th></tr></thead><tbody><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><td scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Hot Chili Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size: Large</span></li></ul></div></td><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1336655655/photo/pizza-with-bacon-mushrooms-salami-and-vegetables-isolated-on-white-background.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=iZaMhg4O0fl8bG7qMPoIv9RGImfDDAdi1jauyq1F2K4=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size: Regular</span></li></ul></div></th><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1283482970/photo/top-view-of-round-pizza-isolated-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=7GPLy0DQ6QI89b26E4iQMY1ou9510Q7t5GMci-EmJ3E=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size: Small</span></li></ul></div></th><td class=\"py-4 px-6\">1</td><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr></tbody></table></div>", 1);
+var _hoisted_5 = {
+  "class": "bg-gray-50 rounded-lg p-8"
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-semibold text-lg mb-6"
+}, "Order Summary", -1 /* HOISTED */);
+var _hoisted_7 = {
+  "class": "flex justify-between mb-2"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-gray-600"
+}, "3", -1 /* HOISTED */);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "mb-3 h-px bg-gray-200 border-0 dark:bg-gray-700"
+}, null, -1 /* HOISTED */);
+var _hoisted_10 = {
+  "class": "flex justify-between mb-2"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-semibold"
+}, "$80.96", -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-gray-600 text-sm"
+}, "Shipping and others will be calculated at checkout.", -1 /* HOISTED */);
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "my-3 h-px bg-gray-200 border-0 dark:bg-gray-700"
+}, null, -1 /* HOISTED */);
+var _hoisted_14 = {
+  "class": "mt-3 block w-full"
+};
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "class": "block w-full text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+}, " Proceed to checkout ")], -1 /* HOISTED */);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Continue Shopping ");
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Label = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Label");
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Label, {
+    "class": "font-semibold",
+    labelFor: "Discount",
+    text: "Items"
+  }), _hoisted_8]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Label, {
+    "class": "font-semibold",
+    labelFor: "Subtotal",
+    text: "Subtotal"
+  }), _hoisted_11]), _hoisted_12, _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/",
+    type: "button",
+    "class": "block w-full text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-3 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_16];
+    }),
+    _: 1 /* STABLE */
+  })])])])])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=template&id=19797662":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=template&id=19797662 ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "container pb-10 pt-3"
+};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-3xl font-bold text-center mb-16\">Checkout</h1><div class=\"overflow-x-auto relative\"><table class=\"w-full text-sm text-left text-gray-500 dark:text-gray-400\"><thead class=\"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\"><tr><th scope=\"col\" class=\"py-3 px-6\">Product</th><th scope=\"col\" class=\"py-3 px-6\">Action</th><th scope=\"col\" class=\"py-3 px-6\">Total</th></tr></thead><tbody><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Hot Chili Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size:</span> Large </li><li><span class=\"font-normal text-gray-600\">Qty:</span> 1 </li></ul></div></th><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1336655655/photo/pizza-with-bacon-mushrooms-salami-and-vegetables-isolated-on-white-background.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=iZaMhg4O0fl8bG7qMPoIv9RGImfDDAdi1jauyq1F2K4=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size:</span> Medium </li><li><span class=\"font-normal text-gray-600\">Qty:</span> 1 </li></ul></div></th><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex\"><img class=\"w-24 h-24 rounded-t-lg object-cover\" src=\"https://media.istockphoto.com/id/1283482970/photo/top-view-of-round-pizza-isolated-on-white.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=7GPLy0DQ6QI89b26E4iQMY1ou9510Q7t5GMci-EmJ3E=\" alt=\"product image\"><div class=\"pl-5\"><p class=\"font-bold\">Pepperoni Pizza</p><ul class=\"mt-2\"><li><span class=\"font-normal text-gray-600\">Size: Small</span></li><li><span class=\"font-normal text-gray-600\">Qty: 1</span></li></ul></div></th><td class=\"py-4 px-6 text-pink-600 font-medium\"><span>Remove</span></td><td class=\"py-4 px-6 font-bold\">$2999</td></tr></tbody></table></div>", 2);
 var _hoisted_4 = {
   "class": "grid grid-col-1 md:grid-cols-3 gap-6 my-24"
 };
@@ -21996,13 +22106,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/Home */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/Login */ "./resources/js/pages/Login.vue");
 /* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Register */ "./resources/js/pages/Register.vue");
 /* harmony import */ var _pages_Cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Cart */ "./resources/js/pages/Cart.vue");
-/* harmony import */ var _pages_Product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/Product */ "./resources/js/pages/Product.vue");
-/* harmony import */ var _pages_products_AddProduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/products/AddProduct */ "./resources/js/pages/products/AddProduct.vue");
+/* harmony import */ var _pages_Checkout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/Checkout */ "./resources/js/pages/Checkout.vue");
+/* harmony import */ var _pages_Product__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/Product */ "./resources/js/pages/Product.vue");
+/* harmony import */ var _pages_products_AddProduct__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/products/AddProduct */ "./resources/js/pages/products/AddProduct.vue");
+
 
 
 
@@ -22027,16 +22139,20 @@ var routes = [{
   name: "cart",
   component: _pages_Cart__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
+  path: "/checkout",
+  name: "checkout",
+  component: _pages_Checkout__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
   path: "/product/add",
   name: "add_product",
-  component: _pages_products_AddProduct__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _pages_products_AddProduct__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
   path: "/product/:id",
   name: "product",
-  component: _pages_Product__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _pages_Product__WEBPACK_IMPORTED_MODULE_5__["default"]
 }];
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_6__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_6__.createWebHistory)(),
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createWebHistory)(),
   routes: routes // short for `routes: routes`
 });
 
@@ -44841,6 +44957,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/pages/Checkout.vue":
+/*!*****************************************!*\
+  !*** ./resources/js/pages/Checkout.vue ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Checkout_vue_vue_type_template_id_19797662__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Checkout.vue?vue&type=template&id=19797662 */ "./resources/js/pages/Checkout.vue?vue&type=template&id=19797662");
+/* harmony import */ var _Checkout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Checkout.vue?vue&type=script&lang=js */ "./resources/js/pages/Checkout.vue?vue&type=script&lang=js");
+/* harmony import */ var C_Users_Robert_Miras_OneDrive_Documents_Code_larafoods_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_Robert_Miras_OneDrive_Documents_Code_larafoods_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Checkout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Checkout_vue_vue_type_template_id_19797662__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/Checkout.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/pages/Home.vue":
 /*!*************************************!*\
   !*** ./resources/js/pages/Home.vue ***!
@@ -45195,6 +45339,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/Checkout.vue?vue&type=script&lang=js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/pages/Checkout.vue?vue&type=script&lang=js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Checkout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Checkout_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Checkout.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/pages/Home.vue?vue&type=script&lang=js":
 /*!*************************************************************!*\
   !*** ./resources/js/pages/Home.vue?vue&type=script&lang=js ***!
@@ -45479,6 +45639,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cart_vue_vue_type_template_id_7908d3ae__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cart_vue_vue_type_template_id_7908d3ae__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cart.vue?vue&type=template&id=7908d3ae */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Cart.vue?vue&type=template&id=7908d3ae");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Checkout.vue?vue&type=template&id=19797662":
+/*!***********************************************************************!*\
+  !*** ./resources/js/pages/Checkout.vue?vue&type=template&id=19797662 ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Checkout_vue_vue_type_template_id_19797662__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Checkout_vue_vue_type_template_id_19797662__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Checkout.vue?vue&type=template&id=19797662 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/Checkout.vue?vue&type=template&id=19797662");
 
 
 /***/ }),

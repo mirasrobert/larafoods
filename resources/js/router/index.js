@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
 import Product from "../pages/Product";
 import AddProduct from "../pages/products/AddProduct";
 
@@ -27,6 +28,11 @@ const routes = [
         path: "/cart",
         name: "cart",
         component: Cart,
+    },
+    {
+        path: "/checkout",
+        name: "checkout",
+        component: Checkout,
     },
     {
         path: "/product/add",
