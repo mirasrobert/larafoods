@@ -186,6 +186,8 @@
                             type="number"
                             id="quantity"
                             placeholder="How many?"
+                            min="1"
+                            max="10"
                         />
                     </div>
                     <div class="mb-6">

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\MeController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShoppingCartController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout', LogoutController::class);
     Route::get('/me', MeController::class);
     Route::apiResource('products', ProductController::class)->except(['index', 'show']);
-});
 
+    Route::get('/cart', [ShoppingCartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/{product}', [ShoppingCartController::class, 'store'])->name('cart.store');
+});

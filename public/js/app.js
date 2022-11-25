@@ -21559,7 +21559,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Input, {
     type: "number",
     id: "quantity",
-    placeholder: "How many?"
+    placeholder: "How many?",
+    min: "1",
+    max: "10"
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_SubmitButton, {
     width: "full",
     text: "Add to cart"
@@ -21737,7 +21739,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container py-32"
+  "class": "container pb-32 pt-3"
 };
 var _hoisted_2 = {
   "class": "flex flex-col justify-center w-full items-center"

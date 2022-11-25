@@ -1,6 +1,6 @@
 <template>
     <Authenticated>
-        <div class="container py-32">
+        <div class="container pb-32 pt-3">
             <div class="flex flex-col justify-center w-full items-center">
                 <div class="flex items-center justify-center mb-5">
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Add Pizza</span>
