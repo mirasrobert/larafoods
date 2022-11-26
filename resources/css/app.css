@@ -13,6 +13,20 @@
     font-family: "Montserrat", sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
+body, #app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
 .center-card {
     height: calc(100vh - 52px);
 }

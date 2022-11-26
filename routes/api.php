@@ -36,5 +36,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::apiResource('products', ProductController::class)->except(['index', 'show']);
 
     Route::get('/cart', [ShoppingCartController::class, 'index'])->name('cart.index');
+    Route::get('/cart/count', [ShoppingCartController::class, 'count'])->name('cart.count');
     Route::post('/cart/{product}', [ShoppingCartController::class, 'store'])->name('cart.store');
+    Route::delete('/cart/{id}', [ShoppingCartController::class, 'destroy'])->name('cart.destroy');
 });

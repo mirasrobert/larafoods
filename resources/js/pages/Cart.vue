@@ -1,7 +1,13 @@
 <template>
-    <div class="container pb-10 pt-3">
+    <div v-if="isLoading" class="flex items-center justify-center min-h-screen w-full">
+        <pulse-loader color="#1A56DB" size="40px"></pulse-loader>
+    </div>
+    <div v-else class="container pb-10 pt-3">
         <h1 class="text-3xl font-bold text-center mb-16">Shopping Cart</h1>
-        <div
+        <div v-if="cart.length === 0">
+            <AlertMessage text="Your cart is currently empty." />
+        </div>
+        <div v-else
             class="grid grid-col-1 lg:grid-cols-[750px_minmax(450px,_1fr)_100px] gap-8">
             <div class="overflow-x-auto overflow-y-hidden">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -16,38 +22,40 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-10 md:px-0">
+                    <tr v-for="product in cart" :key="product.rowId"
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 px-10 md:px-0">
                         <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white flex pr-36">
                             <img
                                 class="w-24 h-24 rounded-t-lg object-cover"
-                                src="https://media.istockphoto.com/id/1192094401/photo/delicious-vegetarian-pizza-on-white.jpg?s=612x612&w=0&k=20&c=Qsm2ikAI0Oz5JMu2COCmAODV_5U7YZtipj8Ic7BtJF8="
+                                :src="product.options.image"
                                 alt="product image"
                             />
                             <div class="pl-5">
-                                <p class="font-bold">Hot Chili Pizza</p>
+                                <p class="font-bold">{{ product.name }}</p>
                                 <div class="flex flex-col justify-between h-full">
                                     <ul class="mt-2">
                                         <li>
-                                            <span class="font-normal text-gray-600">Size: Large</span>
+                                            <span class="font-normal text-gray-600">Size: {{
+                                                    product.options.size
+                                                }}</span>
                                         </li>
                                     </ul>
-                                    <p class="font-bold pb-5">$75.52</p>
+                                    <p class="font-bold pb-5">${{ product.price }}</p>
                                 </div>
                             </div>
                         </td>
                         <td class="py-4 px-6">
-                            <select id="small" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                            <select id="small"
+                                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option v-for="(num, index) in 10" :key="index" :value="num"
+                                        :selected="product.qty === num">{{ num }}
+                                </option>
                             </select>
                         </td>
                         <td class="py-4 px-6 text-pink-600 font-medium">
-                            <span>Remove</span>
+                            <button @click="removeCart(product.rowId)" class="bg-transparent">Remove</button>
                         </td>
-                        <td class="py-4 px-6 font-bold">$2999</td>
+                        <td class="py-4 px-6 font-bold">₱{{ (product.price * product.qty) }}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -61,7 +69,9 @@
                             labelFor="Discount"
                             text="Items"
                         />
-                        <p class="text-gray-600">3</p>
+                        <p class="text-gray-600">
+                            {{ cart.reduce((acc, product) => acc + product.qty, 0) }}
+                        </p>
                     </div>
                     <hr class="mb-3 h-px bg-gray-200 border-0 dark:bg-gray-700">
                     <div class="flex justify-between mb-2">
@@ -70,7 +80,7 @@
                             labelFor="Subtotal"
                             text="Subtotal"
                         />
-                        <p class="font-semibold">$80.96</p>
+                        <p class="font-semibold">₱{{ cart.reduce((acc, product) => acc + (product.price * product.qty), 0) }}</p>
                     </div>
                     <p class="text-gray-600 text-sm">Shipping and others will be calculated at checkout.</p>
                     <hr class="my-3 h-px bg-gray-200 border-0 dark:bg-gray-700">
@@ -102,9 +112,33 @@
 <script>
 import Label from "../components/forms/Label.vue";
 import Input from "../components/forms/Input.vue";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import useCart from "../composables/cart";
+import {onMounted} from "vue";
+import AlertMessage from "../components/alerts/AlertMessage";
+
 export default {
     name: "Cart",
-    components: { Input, Label },
+    components: {Input, Label, PulseLoader, AlertMessage},
+    setup() {
+        const {getCart, deleteCart, cart, isLoading} = useCart();
+
+        onMounted(getCart)
+
+        const removeCart = async (id) => {
+            if (!window.confirm('Are you sure?')) {
+                return
+            }
+            await deleteCart(id);
+            await getCart();
+        }
+
+        return {
+            cart,
+            isLoading,
+            removeCart
+        }
+    }
 };
 </script>
 

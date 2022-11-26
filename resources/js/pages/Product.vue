@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="w-full">
-                <form action="#">
+                <form @submit.prevent="onSubmit">
                     <!-- Title -->
                     <div class="flex justify-between mb-6">
                         <p class="text-xl font-semibold">{{ product && product.name }}</p>
@@ -27,7 +27,7 @@
                             <p class="text-xl font-semibold">
 
                                 {{
-                                    `$${product && product.product_attribute.find(attr => attr.size.toLowerCase() === selectedSize).price}`
+                                    `₱${product && product.product_attribute.find(attr => attr.size.toLowerCase() === selectedSize).price}`
                                 }}
                             </p>
                         </div>
@@ -188,6 +188,7 @@
                             placeholder="How many?"
                             min="1"
                             max="10"
+                            v-model="qty"
                         />
                     </div>
                     <div class="mb-6">
@@ -323,6 +324,8 @@ import Label from "../components/forms/Label.vue";
 import SubmitButton from "../components/forms/SubmitButton.vue";
 import useProducts from "../composables/products";
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import useCart from "../composables/cart";
+import Swal from "sweetalert2";
 
 
 export default {
@@ -331,8 +334,11 @@ export default {
     setup() {
         const {product, getSingleProduct, isLoading, status} = useProducts();
         const route = useRoute();
-        const prdAttribute = ref('');
         const selectedSize = ref('regular');
+
+        const qty = ref(1);
+
+        const {addToCart} = useCart();
 
         // fetch the user information when params change
         watch(
@@ -348,11 +354,31 @@ export default {
             }
         );
 
+        const onSubmit = () => {
+
+            addToCart({
+                qty: Number(qty.value),
+                price: product.value.product_attribute.find(attr => attr.size.toLowerCase() === selectedSize.value).price,
+                size: selectedSize.value
+            }, route.params.id)
+
+            Swal.fire({
+                toast: true,
+                icon: "success",
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                title: "An item has been added to cart.",
+            });
+        }
+
         return {
             product,
             isLoading,
-            prdAttribute,
-            selectedSize
+            selectedSize,
+            qty,
+            onSubmit
         }
 
     }

@@ -75,8 +75,7 @@
                         </template>
                         <router-link
                             to="/cart"
-                            class="block py-2 ml-8 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                        >
+                            class="block py-2 ml-8 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                             <div class="cart-icon-wrapper">
                                 <div class="flex">
                                     <svg
@@ -93,13 +92,13 @@
                                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                                         />
                                     </svg>
-                                    <span class="md:hidden">[0]</span>
+                                    <span class="md:hidden">
+                                        [{{ cartCount }}]
+                                    </span>
                                 </div>
-
-                                <span
-                                    class="cart-item-count md:opacity-100 opacity-0"
-                                >5</span
-                                >
+                                <span class="cart-item-count md:opacity-100 opacity-0">
+                                     {{ cartCount }}
+                                </span>
                             </div>
                         </router-link>
                     </nav>
@@ -112,8 +111,9 @@
 </template>
 
 <script>
-import {ref, computed} from "vue";
+import {ref, computed, onMounted} from "vue";
 import {useStore} from "vuex";
+import useCart from "../../composables/cart";
 
 export default {
     name: "Navbar",
@@ -125,6 +125,10 @@ export default {
         // Get a data from the state getters
         const authenticated = computed(() => store.getters.authenticated);
 
+        const {getCartCount, cartCount} = useCart();
+
+        onMounted(getCartCount);
+
         // Navbar collapse
         const toggle = () => {
             isOpen.value = !isOpen.value
@@ -134,7 +138,8 @@ export default {
             onLogout,
             authenticated,
             isOpen,
-            toggle
+            toggle,
+            cartCount
         };
     },
 };
